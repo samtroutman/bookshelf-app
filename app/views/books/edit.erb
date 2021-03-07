@@ -1,5 +1,6 @@
 <h1>Edit <%= @book.name %></h1>
-
+<br>
+<br>
 <form action="/books/<%= @book.id %>" method="POST">
   <label>Book Name</label>
   <input type="text" name="name" value="<%=@book.name %>" required> </br>
@@ -13,5 +14,14 @@
   <label>Your Rating</label>
   <input type="text" name="rating" value="<%=@book.rating%>"> </br>
 
-  <input type="submit" value="Update">
+
+  <button type="submit" value="Update">Update</button>
+</form>
+
+<br>
+<br>
+
+<form method="post" action="/books/<%= @book.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Book">
 </form>
