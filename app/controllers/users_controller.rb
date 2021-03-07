@@ -2,46 +2,50 @@ class UsersController < ApplicationController
 
 
     get '/signup' do 
+      if logged_in?
+        redirect to '/books'
+      end
         erb :'users/new'
     end
 
 
     post '/signup' do 
         if params[:username] == "" || params[:password] == ""
-          redirect '/signup'
+          redirect to '/signup'
         else
-          @user = User.create(:username => params[:username], :password => params[:password])
+        
+          @user = User.new(:username => params[:username], :password => params[:password])
+          
+          @user.save
+          
           session[:user_id] = @user.id
-          redirect '/books'
-        end
+          
+          redirect to "/books"
+      end
       end
     
       get '/login' do 
-        if !session[:user_id]
+        if !logged_in?
           erb :'/users/login'
         else
           redirect '/books'
         end
       end
     
-      post '/login' do
-        user = User.find_by(email: params[:user][:email])
-        if user && user.authenticate(params[:user][:password])
-          session[:user_id] = user.id
-          redirect '/books'
+      post "/login" do
+        user = User.find_by(:username => params[:username])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+
+            redirect "/books"
         else
-          flash[:message] = "Wrong password or email. Please try again!"
-          redirect '/login'
+            redirect "/signup"
         end
-      end
+    end
 
       get '/logout' do
-        if session[:user_id] != nil
-          session.destroy
-          redirect to '/login'
-        else
-          redirect to '/'
-        end
+        session.clear
+        redirect "/"
       end
     
     end
