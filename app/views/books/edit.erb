@@ -2,10 +2,10 @@
 
 <form action="/books/<%= @book.id %>" method="POST">
   <label>Book Name</label>
-  <input type="text" name="name" value="<%=@book.name %>"> </br>
+  <input type="text" name="name" value="<%=@book.name %>" required> </br>
 
   <label>Book Author</label>
-  <input type="text" name="author" value="<%=@book.author%>"> </br>
+  <input type="text" name="author" value="<%=@book.author%>" required> </br>
 
   <label>Book Genre</label>
   <input type="text" name="genre" value="<%=@book.genre%>"> </br>

@@ -1,7 +1,7 @@
-<%= @book.name %><br />
-<%= @book.author %> <br />
-<%= @book.genre %> <br />
-<%= @book.rating %> <br />
+<h3>Name: <%= @book.name %><br /></h3>
+Author: <%= @book.author %> <br />
+Genre: <%= @book.genre %> <br />
+Rating: <%= @book.rating %> <br />
 
 
 <form method="post" action="/books/<%= @book.id %>">

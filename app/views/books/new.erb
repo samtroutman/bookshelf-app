@@ -1,17 +1,21 @@
 <h1>Add a Book to Your Bookshelf</h1>
 
+<br><br>
+
+<p><i>Book name and author are required</i></p><br>
+
 <form action="/books" method="POST">
     <label>Book Name</label>
-    <input type="text" name="name"><br>
+    <input type="text" name="name" placeholder="A Farewell to Arms" required><br>
 
     <label>Book Author</label>
-    <input type="text" name="author"><br>
+    <input type="text" name="author" placeholder="Ernest Hemingway" required><br>
 
     <label>Book Genre</label>
-    <input type="text" name="genre"><br>
+    <input type="text" name="genre" placeholder="Realism"><br>
 
     <label>Your Rating</label>
-    <input type="text" name="rating"><br>
+    <input type="text" name="rating" placeholder="?/5"><br>
 
 
     <input type="submit" value="Add">
