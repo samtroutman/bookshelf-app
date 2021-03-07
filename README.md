@@ -6,9 +6,7 @@ Welcome to Bookshelf App! In this directory, you'll find the files you need to r
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'bookshelf-app'
-```
+```ruby gem 'bookshelf-app' ```
 
 And then execute:
 
