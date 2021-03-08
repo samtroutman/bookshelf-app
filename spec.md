@@ -26,7 +26,7 @@ Confirm
 - [x] You have a large number of small Git commits
     Had some issues initially with Git commits but have updated them
 - [x] Your commit messages are meaningful
-    Commit messages succinctly describe commit
+    Commit messages succinctly describe commits
 - [x] You made the changes in a commit that relate to the commit message
     Commits are relevant to updates
 - [x] You don't include changes in a commit that aren't related to the commit message
